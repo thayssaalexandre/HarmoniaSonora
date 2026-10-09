@@ -1,5 +1,6 @@
 let listaTeclas = document.querySelectorAll(".tocarMusica");
 let listaAudios = document.querySelectorAll("audio");
+let imgCantora = document.querySelector(".img_cantora"); // Seleciona a imagem da cantora
 
 function tocarSom(idElementoSom) {
     for (let i = 0; i < listaAudios.length; i++) {
@@ -17,15 +18,20 @@ function tocarSom(idElementoSom) {
 let contador = 0;
 
 while (contador < listaTeclas.length) {
-
     let tecla = listaTeclas[contador];
-    let instrumento = tecla.classList[1];
-    let audio = `#som_${instrumento}`;
+    let instrumento = tecla.classList[1].replace("tecla_", "");
+    let audio = `#tocar_musica_${instrumento}`;
 
     tecla.onclick = function () {
         tocarSom(audio);
         tecla.classList.add("tocando");
-    }
+        
+        // Troca a foto da cantora para a imagem correspondente à música
+        if (imgCantora) {
+            imgCantora.src = `../assets/image/${instrumento}.png`;
+        }
+    };
 
     contador++;
 }
+

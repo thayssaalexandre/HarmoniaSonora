@@ -9,7 +9,7 @@
     --cor-principal:#dd1c76;
     --cor-details:#d52f7cc1;
     --branco: #fff;
-    --cor-titles: #FFE6F3;
+    --cor-titles: #f9c8e1;
     --font-title: "Playfair Display", serif;
     --font-main: "Montserrat", sans-serif;
 }
@@ -18,6 +18,8 @@ body{
     background-image: url('../assets/image/background.png');
     background-size: cover;
     background-repeat: no-repeat;
+    min-height: 100vh;
+    min-height: 100dvh;
 }
 
 header{
@@ -28,7 +30,7 @@ header{
     color: var(--cor-titles);
     display: flex;
     text-align: center;
-    margin-bottom: 35px;
+    margin-bottom: 50px;
     justify-content: center;
     gap: 10px;
 }
@@ -55,7 +57,8 @@ header{
 }
 
 .content_artists:hover{
-    transform: scale(1.0);
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
 }
 
 .content_artists__img{
@@ -68,32 +71,128 @@ header{
     color: var(--cor-titles);
 }
 
-.teclado{
-    background-color: var(--cor-principal);
-    text-align: center;
-    border-radius: 15px;
-    margin: 60px;
-    width: 68%;
+.conteudo_principal { 
+    display: flex; 
+    flex-direction: row; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 40px; 
+    width: 90%; 
+    max-width: 1000px; 
+    margin: auto; 
+}
+.teclado { 
+    background-color: var(--cor-principal); 
+    text-align: center; 
+    border-radius: 15px; 
+    padding: 25px; 
+    width: 400px; 
+    box-sizing: border-box; 
+}
+.teclas { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 10px; 
+}
+.tocarMusica {
+     width: 100%; 
+     box-sizing: border-box; 
+     color: var(--cor-principal); 
+     font-family: var(--font-main); 
+     font-size: 15px; 
+     cursor: pointer; 
+     background-color: var(--branco); 
+     border-radius: 12px; 
+     padding: 15px; 
+     border: none; 
+} 
+.tocarMusica:hover { 
+    transform: scale(1.03); 
+}
+.tocarMusica.tocando { 
+    background-color: var(--cor-titles); 
+    color: var(--cor-principal); 
+}
+.cantora { 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+} 
+.img_cantora {
+     display: block; 
+     width: 90%; 
+     max-width: 380px; 
+     height: auto;
+     border-radius: 12px;
+     border: 8px groove var(--cor-details);
 }
 
-.tocarMusica{
-    width: 200px;
-    color: var(--cor-details);
-    font-size: 15px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    background-color: var(--branco);
-    margin: 20px;
-    border-radius: 15px;
-    padding: 20px;
-    border: none;
-}
 
-.tocarMusica:hover{
-    transform: scale(1.2);
-}
+@media (max-width: 600px){
 
-.tocarMusica.tocando {
-    background-color: var(--cor-titles);
-    color: var(--cor-principal);
+.conteudo_principal, 
+    .conteudo-principal {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 20px;
+    }
+
+    header{
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .header_img{
+        width: 70px;
+    }
+
+    .content{
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        padding: 0 15px 30px;
+    }
+
+    .content_artists{
+        width: 100%;
+        max-width: 280px;
+        padding: 25px;
+        box-sizing: border-box;
+        text-align: center;
+        box-shadow: 3px 8px 8px 4px var(--cor-details);
+    }
+   
+    .content_artists:hover{
+        transform: scale(1.05);
+        transition: transform 0.3s ease;
+    }
+
+    .content_artists__img{
+        width: 100%;
+    }
+
+    .teclado{
+        width: 90%;
+        margin: 0 auto 30px;
+        padding: 15px 0;
+    }
+
+    .teclas{
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 5px;
+    }
+
+    .tocarMusica{
+        width: 80%;
+        max-width: 250px;
+        margin: 8px;
+        padding: 16px 10px;
+    }
+
+    .tocarMusica:hover{
+        transform: scale(1.05);
+    }
 }

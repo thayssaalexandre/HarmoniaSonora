@@ -67,3 +67,33 @@ header{
     text-decoration: none;
     color: var(--cor-titles);
 }
+
+.teclado{
+    background-color: var(--cor-principal);
+    text-align: center;
+    border-radius: 15px;
+    margin: 60px;
+    width: 68%;
+}
+
+.tocarMusica{
+    width: 200px;
+    color: var(--cor-details);
+    font-size: 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    background-color: var(--branco);
+    margin: 20px;
+    border-radius: 15px;
+    padding: 20px;
+    border: none;
+}
+
+.tocarMusica:hover{
+    transform: scale(1.2);
+}
+
+.tocarMusica.tocando {
+    background-color: var(--cor-titles);
+    color: var(--cor-principal);
+}
